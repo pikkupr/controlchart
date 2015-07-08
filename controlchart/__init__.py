@@ -17,7 +17,7 @@ class ControlChart(object):
         try:
             assert data, 'Data cannot be None'
             assert len(data) > 0, 'Data cannot be None'
-            assert any([isinstance(x, int) for x in data]), 'Data can only be ints or floats'
+            assert any([isinstance(x, int) or isinstance(x,float) for x in data]), 'Data can only be ints or floats'
             self.data = data
             self._rod_mean = None
         except AssertionError, e:
